@@ -19,7 +19,7 @@ En modern, responsiv one‑page byggd med React och Tailwind CSS. Innehåller se
 ## Struktur
 
 - `index.html` – HTML, fontladdning och root
-- `src/App.jsx` – Sätter ihop alla sektioner
+- `src/App.jsx` – Ny minimalistisk single‑file design (alla sektioner i en fil)
 - `src/components/*` – Fristående sektioner/komponenter
 - `src/data/*` – Exempeldata för projekt/omdömen/FAQ
 - `src/index.css` – Tailwind‑lager och komponentklasser
@@ -43,3 +43,13 @@ En modern, responsiv one‑page byggd med React och Tailwind CSS. Innehåller se
 - Sektioner har `scroll-mt-24` för att inte döljas av den sticky headern.
 - Kontaktrutan är statisk. Koppla gärna till e‑posttjänst eller backend.
 
+### Bilder
+
+Lägg dina bilder i `public/` med exakt dessa filnamn (från din bilaga):
+
+- `public/img-1.jpg` – Hero (landskap/soluppgång)
+- `public/img-2.jpg` – Grävmaskin
+- `public/img-3.jpg` – Bygge med kranar (dag)
+- `public/img-4.jpg` – Byggplats i skymning
+
+Om en bild saknas visas en snygg gradient‑fallback (ingen trasig bildlänk).
