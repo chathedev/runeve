@@ -3,12 +3,13 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 export default function Navbar() {
   const { scrollY } = useScroll()
   const blur = useTransform(scrollY, [0, 300], [0, 8])
+  const blurFilter = useTransform(blur, v => `blur(${v}px)`)
   const y = useTransform(scrollY, [0, 150], [0, -8])
   const bg = useTransform(scrollY, [0, 300], ["rgba(11,18,33,0)", "rgba(11,18,33,0.6)"])
 
   return (
     <div className="nav-wrap">
-      <motion.div style={{ backdropFilter: blur.to(v => `blur(${v}px)`), background: bg, y }}>
+      <motion.div style={{ backdropFilter: blurFilter, background: bg, y }}>
         <nav className="container nav">
           <a className="brand" href="#top" aria-label="FlowPay home">
             <div className="brand-badge" />
@@ -26,4 +27,3 @@ export default function Navbar() {
     </div>
   )
 }
-
