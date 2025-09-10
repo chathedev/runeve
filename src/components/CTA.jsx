@@ -1,19 +1,22 @@
-import { motion } from 'framer-motion'
+import React from 'react'
 
-export default function CTA(){
+export default function CTA() {
   return (
-    <section id="get-started" className="cta">
-      <div className="container glass" style={{ padding: 24 }}>
-        <motion.h3 initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once:true }} transition={{ duration: 0.5 }}>
-          Ready to build something delightful?
-        </motion.h3>
-        <p className="muted">Install the SDK and ship your first payment in minutes.</p>
-        <div style={{ display:'flex', gap: 12, justifyContent:'center', marginTop: 10 }}>
-          <code className="code">npm i flowpay</code>
-          <a className="btn primary" href="#docs">Get the docs</a>
+    <div className="section">
+      <div className="card relative overflow-hidden px-6 py-10 sm:px-10">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-gold/10 to-brand-orange/10" />
+        <div className="grid items-center gap-6 sm:grid-cols-2">
+          <div>
+            <h3 className="text-2xl font-bold">Redo att sätta igång?</h3>
+            <p className="mt-2 text-stone">Berätta om ditt projekt så tar vi fram en gratis offert.</p>
+          </div>
+          <div className="flex gap-3 sm:justify-end">
+            <a href="#kontakt" className="btn-primary">Få offert</a>
+            <a href="#tjanster" className="btn-outline">Våra tjänster</a>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 
