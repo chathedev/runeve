@@ -29,11 +29,7 @@ function SafeImg(props) {
 }
 
 export default function App() {
-  useEffect(() => {
-    // Preload images (helps avoid flashes)
-    Object.values(IMAGES).forEach((s) => { const i = new Image(); i.src = s })
-  }, [])
-
+  
   return (
     <div className="min-h-screen flex flex-col bg-sand text-coal">
       <Header/>
@@ -279,6 +275,16 @@ function Input({ label, ...props }){
       <input {...props} className="w-full rounded-lg border border-black/10 bg-white p-3 outline-none focus:border-brand-gold/60" />
     </div>
   )
+}
+
+function IconPhone(){
+  return <svg viewBox="0 0 24 24" className="h-5 w-5 text-brand-gold" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M3 5l4-2 3 5-3 2a14 14 0 007 7l2-3 5 3-2 4c-6 1-16-9-14-16z"/></svg>
+}
+function IconMail(){
+  return <svg viewBox="0 0 24 24" className="h-5 w-5 text-brand-gold" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
+}
+function IconPin(){
+  return <svg viewBox="0 0 24 24" className="h-5 w-5 text-brand-gold" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M12 22s7-7 7-12a7 7 0 10-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="3"/></svg>
 }
 
 function Logo({ className = 'h-6 w-6' }) {
