@@ -93,12 +93,12 @@ function Header(){
 
 function Hero(){
   return (
-    <section id="hero" className="relative overflow-hidden">
+    <section id="hero" className="relative overflow-hidden min-h-[100svh]">
       <div className="absolute inset-0 z-0">
-        <SafeImg src={IMAGES.hero} alt="Sjöbo landskap i soluppgång" className="h-full w-full object-cover object-center"/>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent"/>
+        <SafeImg src={IMAGES.hero} alt="Sjöbo landskap i soluppgång" className="h-full w-full object-cover object-center" loading="eager" decoding="async" sizes="100vw"/>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/10"/>
       </div>
-      <div className="section relative z-10 pt-32 pb-24 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-36 text-white">
+      <div className="section relative z-10 min-h-[100svh] flex items-center text-white py-24 sm:py-28 lg:py-32">
         <span className="badge bg-white/20 text-white border-white/30">Sjöbo med omnejd</span>
         <h1 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
           Markarbeten, schakt & dränering – tryggt och professionellt
@@ -156,7 +156,7 @@ function Gallery(){
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((p) => (
           <figure key={p.title} className="card overflow-hidden">
-            <SafeImg src={p.src} alt={p.alt} className="h-64 w-full object-cover"/>
+            <SafeImg src={p.src} alt={p.alt} className="w-full object-cover h-56 sm:h-64" loading="lazy" decoding="async" sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"/>
             <figcaption className="p-4 text-sm font-medium">{p.title}</figcaption>
           </figure>
         ))}
@@ -261,7 +261,7 @@ function Footer(){
         </div>
         <div className="mt-10 border-t border-white/10 pt-6 text-xs text-white/60 flex flex-wrap items-center justify-between gap-4">
           <p>© {year} Lindstedts Entreprenad. Alla rättigheter förbehållna.</p>
-          <p>Byggd i React + Tailwind.</p>
+          <p>Byggd av <a className="underline hover:text-brand-gold" href="https://wby.se" target="_blank" rel="noopener noreferrer">Websites by you</a>.</p>
         </div>
       </div>
     </footer>
