@@ -94,11 +94,11 @@ function Header(){
 function Hero(){
   return (
     <section id="hero" className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0">
         <SafeImg src={IMAGES.hero} alt="Sjöbo landskap i soluppgång" className="h-full w-full object-cover object-center"/>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-transparent"/>
       </div>
-      <div className="section pt-32 pb-24 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-36 text-white">
+      <div className="section relative z-10 pt-32 pb-24 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-36 text-white">
         <span className="badge bg-white/20 text-white border-white/30">Sjöbo med omnejd</span>
         <h1 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
           Markarbeten, schakt & dränering – tryggt och professionellt
