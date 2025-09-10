@@ -98,15 +98,15 @@ function Hero(){
         <SafeImg src={IMAGES.hero} alt="Sjöbo landskap i soluppgång" className="h-full w-full object-cover object-center" loading="eager" decoding="async" sizes="100vw"/>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/10"/>
       </div>
-      <div className="section relative z-10 min-h-[100svh] flex items-center text-white py-24 sm:py-28 lg:py-32">
+      <div className="section relative z-10 min-h-[100svh] flex flex-col justify-center items-start text-white py-24 sm:py-28 lg:py-32 gap-3 sm:gap-4">
         <span className="badge bg-white/20 text-white border-white/30">Sjöbo med omnejd</span>
-        <h1 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+        <h1 className="mt-2 max-w-3xl text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
           Markarbeten, schakt & dränering – tryggt och professionellt
         </h1>
-        <p className="mt-5 max-w-2xl text-white/90 text-lg">
+        <p className="mt-2 max-w-2xl text-white/90 text-lg">
           Lokal entreprenör i Skåne. Raka besked, tydliga offerter och ordning på arbetsplatsen.
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-4 flex flex-col sm:flex-row gap-3">
           <a href="#kontakt" className="btn-primary">Begär kostnadsfri offert</a>
           <a href="#tjanster" className="btn-outline">Se våra tjänster</a>
         </div>
