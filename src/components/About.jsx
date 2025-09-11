@@ -21,10 +21,9 @@ export default function About(){
               <button>Prenumerera på nyheter</button>
             </div>
           </div>
-          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop" alt="Detalj av sadel" />
+          <img src="/images/about-detail.jpg" alt="Detalj av sadel" />
         </div>
       </div>
     </section>
   )
 }
-

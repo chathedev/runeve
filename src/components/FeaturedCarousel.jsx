@@ -1,30 +1,30 @@
 import React from 'react'
 import { products } from '../data/products'
+import { Link } from 'react-router-dom'
 
 export default function FeaturedCarousel(){
-  const items = [...products.filter(p => p.featured), ...products.filter(p => p.featured)]
+  const items = products.filter(p => p.featured).slice(0, 2)
   return (
     <section>
       <div className="container">
         <div className="section-head">
-          <h2>Favoriter just nu</h2>
-          <p>Mjuka färger, rena linjer och lugna detaljer.</p>
+          <h2>Utvald kollektion</h2>
+          <p>Två favoriter – större bild, tydligare fokus.</p>
         </div>
-        <div className="carousel">
-          <div className="track">
-            {items.map((p, i) => (
-              <div className="item" key={p.id + i}>
+        <div className="grid" style={{gridTemplateColumns:'1fr 1fr'}}>
+          {items.map((p) => (
+            <Link to={`/produkt/${p.id}`} key={p.id} className="card" style={{display:'block'}}>
+              <div className="thumb" style={{aspectRatio:'4/3'}}>
                 <img src={p.image} alt={p.name} loading="lazy" />
-                <div style={{padding:12, display:'flex', alignItems:'center', justifyContent:'space-between'}}>
-                  <div style={{fontWeight:600}}>{p.name}</div>
-                  <div style={{color:'#98a2b3'}}>{p.price.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}</div>
-                </div>
               </div>
-            ))}
-          </div>
+              <div className="card-body" style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+                <div style={{fontWeight:700}}>{p.name}</div>
+                <div className="meta">{p.price.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}</div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
   )
 }
-

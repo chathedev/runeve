@@ -11,11 +11,10 @@ export default function Lifestyle(){
         </div>
         <div className="masonry">
           {lifestyleImages.map((src, i) => (
-            <img key={i} src={src} alt="HOVELLA livsstil" loading="lazy" className="reveal" />
+            <img key={i} src={src} alt="HOVELLA livsstil" loading="lazy" />
           ))}
         </div>
       </div>
     </section>
   )
 }
-

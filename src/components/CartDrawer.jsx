@@ -6,7 +6,7 @@ export default function CartDrawer({ open, items, onInc, onDec, onClose }){
     <aside className={`drawer ${open ? 'open' : ''}`} aria-hidden={!open}>
       <div className="drawer-header">
         <strong>Varukorg</strong>
-        <button className="add-btn" onClick={onClose}>Stäng</button>
+        <button className="pill" onClick={onClose}>Stäng</button>
       </div>
       <div className="drawer-body">
         {items.length === 0 && <div style={{color:'#98a2b3'}}>Din varukorg är tom.</div>}
@@ -15,7 +15,7 @@ export default function CartDrawer({ open, items, onInc, onDec, onClose }){
             <img src={it.image} alt={it.name} />
             <div className="grow">
               <div style={{fontWeight:600}}>{it.name}</div>
-              <div style={{color:'#98a2b3', fontSize:14}}>{it.price.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}</div>
+              <div className="meta">{it.price.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}</div>
             </div>
             <div className="qty">
               <button onClick={() => onDec(it.id)}>-</button>
@@ -30,9 +30,8 @@ export default function CartDrawer({ open, items, onInc, onDec, onClose }){
           <div>Delsumma</div>
           <div>{total.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}</div>
         </div>
-        <button className="checkout" disabled={items.length===0}>Till kassan</button>
+        <a href="/kassa" className="checkout" style={{display:'inline-block', textAlign:'center', textDecoration:'none', pointerEvents:items.length===0?'none':'auto', opacity:items.length===0?0.6:1}}>Till kassan</a>
       </div>
     </aside>
   )
 }
-

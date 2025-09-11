@@ -1,13 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ProductCard({ product, onAdd }){
   return (
-    <div className="card reveal">
-      <div className="thumb">
+    <div className="card">
+      <Link to={`/produkt/${product.id}`} className="thumb">
         <img loading="lazy" src={product.image} alt={product.name} />
-      </div>
+      </Link>
       <div className="card-body">
-        <div className="title">{product.name}</div>
+        <Link to={`/produkt/${product.id}`} className="title">{product.name}</Link>
         <div className="meta">{product.category}</div>
         <div className="price-row">
           <div>{product.price.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}</div>
@@ -17,4 +18,3 @@ export default function ProductCard({ product, onAdd }){
     </div>
   )
 }
-
