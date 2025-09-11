@@ -3,26 +3,33 @@ import { products } from '../data/products'
 import { Link } from 'react-router-dom'
 
 export default function FeaturedCarousel(){
-  const items = products.filter(p => p.featured).slice(0, 2)
+  const [first, second] = products.filter(p => p.featured)
   return (
     <section>
       <div className="container">
         <div className="section-head">
           <h2>Utvald kollektion</h2>
-          <p>Två favoriter – större bild, tydligare fokus.</p>
+          <p>Större bilder för en tydligare känsla av material och form.</p>
         </div>
-        <div className="grid" style={{gridTemplateColumns:'1fr 1fr'}}>
-          {items.map((p) => (
-            <Link to={`/produkt/${p.id}`} key={p.id} className="card" style={{display:'block'}}>
-              <div className="thumb" style={{aspectRatio:'4/3'}}>
-                <img src={p.image} alt={p.name} loading="lazy" />
-              </div>
-              <div className="card-body" style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-                <div style={{fontWeight:700}}>{p.name}</div>
-                <div className="meta">{p.price.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}</div>
-              </div>
-            </Link>
-          ))}
+        <div className="featured-grid">
+          <Link to={`/produkt/${first.id}`} className="featured-large">
+            <div className="thumb">
+              <img src={first.image} alt={first.name} loading="lazy" />
+            </div>
+            <div className="featured-caption">
+              <strong>{first.name}</strong>
+              <span className="price">{first.price.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}</span>
+            </div>
+          </Link>
+          <Link to={`/produkt/${second.id}`} className="featured-small">
+            <div className="thumb">
+              <img src={second.image} alt={second.name} loading="lazy" />
+            </div>
+            <div className="featured-caption">
+              <strong>{second.name}</strong>
+              <span className="price">{second.price.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}</span>
+            </div>
+          </Link>
         </div>
       </div>
     </section>

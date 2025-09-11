@@ -36,11 +36,12 @@ function ProductPage({ onAdd }){
           <div className="meta">{p.category}</div>
           <div style={{fontSize:20, margin:'6px 0 12px'}}>{p.price.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}</div>
           <p className="meta" style={{lineHeight:1.6}}>{p.description}</p>
-          <ul className="meta" style={{margin:'0 0 6px 16px'}}>
-            <li>Material: Fullnarvsläder / premium textil</li>
-            <li>Design: Tidlös, ergonomisk passform</li>
-            <li>Garanti: 2 år</li>
-          </ul>
+          <div className="spec-grid">
+            <div className="spec">Material: Fullnarvsläder / premium textil</div>
+            <div className="spec">Passform: Ergonomisk</div>
+            <div className="spec">Användning: Vardag / tävling</div>
+            <div className="spec">Garanti: 2 år</div>
+          </div>
           <div style={{display:'flex', gap:10, alignItems:'center'}}>
             <div className="qty">
               <button onClick={() => setQty(q => Math.max(1, q-1))}>-</button>
@@ -109,6 +110,7 @@ export default function App(){
   const count = cart.reduce((s, i) => s + i.qty, 0)
   return (
     <BrowserRouter>
+      <div className="announcement">Fri frakt över 999 kr • 30 dagars öppet köp</div>
       <ScrollToTop />
       <Header onOpenCart={() => setCartOpen(true)} cartCount={count} onCheckout={() => setUdOpen(true)} />
       <main>

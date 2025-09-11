@@ -6,10 +6,24 @@
     <title>HOVELLA — Stilrena hästprodukter</title>
     <meta name="description" content="HOVELLA – ljus, modern butik för stilrena och hållbara hästprodukter. Träns, sadlar, borstar och mer." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script type="module" crossorigin src="/assets/index-4gj3ytdg.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-C6Nrc90D.css">
+    <script type="module" crossorigin src="/assets/index-CHDrdfBJ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CTl_XV0O.css">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      (function(){
+        var params = new URLSearchParams(window.location.search);
+        var p = params.get('p');
+        if (p) {
+          try {
+            var decoded = decodeURIComponent(p);
+            window.history.replaceState(null, '', decoded);
+          } catch(e) {
+            window.history.replaceState(null, '', p);
+          }
+        }
+      })();
+    </script>
   </body>
   </html>

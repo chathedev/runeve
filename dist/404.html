@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vidarebefordrar…</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      (function(){
+        var l = window.location;
+        var p = l.pathname + l.search + l.hash;
+        var target = '/' + '?p=' + encodeURIComponent(p);
+        l.replace(target);
+      })();
+    </script>
+    <style>body{font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin:40px; color:#111}</style>
+  </head>
+  <body>
+    Vidarebefordrar… Om inget händer, <a href="/">gå till startsidan</a>.
+  </body>
+  </html>
