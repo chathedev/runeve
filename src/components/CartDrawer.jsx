@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function CartDrawer({ open, items, onInc, onDec, onClose }){
+export default function CartDrawer({ open, items, onInc, onDec, onClose, onCheckout }){
   const total = items.reduce((s, it) => s + it.price * it.qty, 0)
   return (
     <aside className={`drawer ${open ? 'open' : ''}`} aria-hidden={!open}>
@@ -30,7 +30,7 @@ export default function CartDrawer({ open, items, onInc, onDec, onClose }){
           <div>Delsumma</div>
           <div>{total.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}</div>
         </div>
-        <a href="/kassa" className="checkout" style={{display:'inline-block', textAlign:'center', textDecoration:'none', pointerEvents:items.length===0?'none':'auto', opacity:items.length===0?0.6:1}}>Till kassan</a>
+        <button className="checkout" onClick={onCheckout} disabled={items.length===0}>Till kassan</button>
       </div>
     </aside>
   )

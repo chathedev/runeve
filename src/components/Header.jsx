@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Header({ onOpenCart, cartCount = 0 }){
+export default function Header({ onOpenCart, cartCount = 0, onCheckout }){
   return (
     <header className="header">
       <div className="container header-inner">
@@ -11,7 +11,7 @@ export default function Header({ onOpenCart, cartCount = 0 }){
           <a href="/#livsstil">Livsstil</a>
           <a href="/#om-oss">Om oss</a>
           <button className="pill" onClick={onOpenCart} aria-label="Öppna varukorg">Varukorg ({cartCount})</button>
-          <Link className="primary" to="/kassa">Till kassan</Link>
+          <button className="primary" onClick={onCheckout}>Till kassan</button>
         </nav>
       </div>
     </header>
