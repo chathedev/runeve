@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 import CartDrawer from './components/CartDrawer'
 import { products } from './data/products'
 import Modal from './components/Modal'
+import ScrollToTop from './components/ScrollToTop'
 
 function usePersistedCart(){
   const [cart, setCart] = useState(() => {
@@ -107,6 +108,7 @@ export default function App(){
   const count = cart.reduce((s, i) => s + i.qty, 0)
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header onOpenCart={() => setCartOpen(true)} cartCount={count} onCheckout={() => setUdOpen(true)} />
       <main>
         <Routes>
