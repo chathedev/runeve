@@ -12,6 +12,7 @@ import CartDrawer from './components/CartDrawer'
 import { products } from './data/products'
 import Modal from './components/Modal'
 import ScrollToTop from './components/ScrollToTop'
+import NotFound from './components/NotFound'
 
 function usePersistedCart(){
   const [cart, setCart] = useState(() => {
@@ -114,6 +115,7 @@ export default function App(){
         <Routes>
           <Route path="/" element={<Home onAdd={onAdd} />} />
           <Route path="/produkt/:id" element={<ProductPage onAdd={onAdd} />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer year={year} />
